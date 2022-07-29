@@ -1,0 +1,38 @@
+#+title: Create words with blocks
+
+* Check out and build
+#+BEGIN_SRC
+git https://github.com/khtdr/word-blocks.git
+cd word-blocks
+pnpm install
+#+END_SRC
+
+You can probably use `yarn` or `npm` as well.
+
+* Usage
+You have 7 blocks, and lots of letter stickers.
+
+- Block 1 has the letters "wftbi", one on each side.
+- Block 2 has "vnlog"
+- Block etc...
+
+Generate the words you can spell, this grabs the first 10 7-letter words.
+
+#+BEGIN_SRC shell :results verbatim
+node ./blocks.js wftbi vnlog hyedo cravs modeu skima tripes \
+    | grep '^.\{7\}$' | head -10
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+abdomen
+abolish
+aborted
+abridge
+abscond
+absence
+absolve
+abusive
+abysmal
+acetone
+#+end_example

@@ -1,8 +1,8 @@
 import fs from 'fs';
-import _ from './lodash';
+import _ from 'lodash';
 
 const data = fs.readFileSync('./dict.txt').toString().split("\n");
-const dict = _.indexBy(_.map(data, word => word.toLowerCase()));
+const dict = _.keyBy(_.map(data, word => word.toLowerCase()));
 let keyed = {};
 _.map(dict, word => {
   const chars = word.split('').sort().join('');
@@ -20,7 +20,7 @@ class Block {
   }
 }
 
-function make_combos (block_set) {
+function make_combos(block_set) {
   const recurse = (prefix, blocks) => {
     if (blocks.length === 1) {
       return blocks[0].words(prefix);
