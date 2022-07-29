@@ -21,7 +21,7 @@ You have 7 blocks, and lots of letter stickers.
 
 Generate the words you can spell, this grabs the first 10 7-letter words.
 
-#+BEGIN_SRC shell
+#+BEGIN_SRC shell :exports both
 node ./blocks.js wftbi vnlog hyedo cravs modeu skima tripes \
     | grep '^.\{7\}$' | head -10
 #+END_SRC
